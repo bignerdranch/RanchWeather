@@ -1,0 +1,21 @@
+/* English */
+
+// MARK: Launch Menu
+
+/* Ranch Weather as the name of the app, presented in the main launch menu */
+"LAUNCH_MENU.TITLE" = "Ranch Weather";
+
+/* Current Location as a menu choice */
+"LAUNCH_MENU.CURRENT_LOCATION.TITLE" = "Current Location";
+
+/* Fixed Locations as a menu section title */
+"LAUNCH_MENU.FIXED_LOCATION.TITLE" = "Fixed Locations";
+
+/* Philadelphia, PA as a fixed location menu choice */
+"LAUNCH_MENU.FIXED_LOCATION.PHILADELPHIA_PA.TITLE" = "Philadelphia, PA";
+
+/* Altlanta, GA as a fixed location menu choice */
+"LAUNCH_MENU.FIXED_LOCATION.ATLANTA_GA.TITLE" = "Atlanta, GA";
+
+/* Herndon, VA as a fixed location menu choice */
+"LAUNCH_MENU.FIXED_LOCATION.HERNDON_VA.TITLE" = "Herndon, VA";
