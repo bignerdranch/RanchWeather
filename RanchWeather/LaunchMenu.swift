@@ -1,11 +1,9 @@
-import UIKit
+import Foundation
 
-class MenuViewController: UIViewController {
+struct LaunchMenu: Menu {
     
-    @IBOutlet fileprivate var tableView: UITableView!
-    
-    fileprivate var launchMenu: Menu {
-        return Menu(sections: [currentLocation, fixedLocations])
+    var sections: [MenuSection] {
+        return [currentLocation, fixedLocations]
     }
     
     fileprivate var fixedLocations: MenuSection {
@@ -29,20 +27,4 @@ class MenuViewController: UIViewController {
         return MenuSection(title: nil, items: [item1])
     }
     
-    fileprivate var menuDataSource: MenuTableViewDataSource?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = NSLocalizedString("LAUNCH_MENU.TITLE", comment: "Ranch Weather as the name of the app, presented in the main launch menu")
-        setupTableView()
-    }
-    
-}
-
-extension MenuViewController {
-    fileprivate func setupTableView() {
-        menuDataSource = MenuTableViewDataSource(menu: launchMenu)
-        tableView.dataSource = menuDataSource
-        menuDataSource?.registerCellsForTableView(tableView: tableView)
-    }
 }

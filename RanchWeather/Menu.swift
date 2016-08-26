@@ -11,8 +11,8 @@ struct MenuSection {
     let items: [MenuItem]
 }
 
-struct Menu {
-    let sections: [MenuSection]
+protocol Menu {
+    var sections: [MenuSection] {get}
 }
 
 class MenuTableViewCell: UITableViewCell {
