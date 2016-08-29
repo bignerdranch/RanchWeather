@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uQZ-D4-WYc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feedback Form View Controller-->
+        <scene sceneID="J6o-n0-UEe">
+            <objects>
+                <viewController id="uQZ-D4-WYc" customClass="FeedbackFormViewController" customModule="RanchWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k48-ol-R3T"/>
+                        <viewControllerLayoutGuide type="bottom" id="VWn-Ha-TNy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fjg-6q-gvy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Feedback Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1g-BH-1RE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueK-J3-puW">
+                                <state key="normal" title="Send Feedback"/>
+                                <connections>
+                                    <segue destination="Hbb-Bl-fJ6" kind="presentation" id="CVG-iF-lWU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d1g-BH-1RE" firstAttribute="centerY" secondItem="fjg-6q-gvy" secondAttribute="centerY" constant="-19" id="5dg-OF-6ft"/>
+                            <constraint firstItem="ueK-J3-puW" firstAttribute="centerX" secondItem="d1g-BH-1RE" secondAttribute="centerX" id="dln-F9-9Fu"/>
+                            <constraint firstItem="d1g-BH-1RE" firstAttribute="centerX" secondItem="fjg-6q-gvy" secondAttribute="centerX" id="gTU-fR-gLT"/>
+                            <constraint firstItem="ueK-J3-puW" firstAttribute="top" secondItem="d1g-BH-1RE" secondAttribute="bottom" constant="8" id="mtq-jf-eA7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaP-3X-eFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="153"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9p3-Mo-s7V">
+            <objects>
+                <viewController id="Hbb-Bl-fJ6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xph-QW-RNi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yh1-V3-gCW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qJP-y9-Aik">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhB-tQ-B3k">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MoQ-qp-1t4">
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="Uq6-nF-wCg" kind="unwind" unwindAction="closeThankYouMessageWithSegue:" id="siz-yV-wTM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WhB-tQ-B3k" firstAttribute="centerX" secondItem="qJP-y9-Aik" secondAttribute="centerX" id="AeN-Zu-q2b"/>
+                            <constraint firstItem="MoQ-qp-1t4" firstAttribute="top" secondItem="WhB-tQ-B3k" secondAttribute="bottom" constant="8" id="H2z-zK-2Va"/>
+                            <constraint firstItem="MoQ-qp-1t4" firstAttribute="centerX" secondItem="WhB-tQ-B3k" secondAttribute="centerX" id="RDv-24-Dah"/>
+                            <constraint firstItem="WhB-tQ-B3k" firstAttribute="centerY" secondItem="qJP-y9-Aik" secondAttribute="centerY" constant="-19" id="n9V-aV-gCi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZx-w0-dSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Uq6-nF-wCg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="152"/>
+        </scene>
+    </scenes>
+</document>

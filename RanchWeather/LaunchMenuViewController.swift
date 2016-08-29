@@ -37,29 +37,16 @@ private extension LaunchMenuViewController {
     }
     
     func setupTableView() {
+        guard let navigationController = navigationController else {
+            assertionFailure("We are assuming this VC is being presented in a navigation controller")
+            return
+        }
         
         // Use shared-code to render menu
-        menuDataSource = MenuTableViewDataSource(menu: LaunchMenu())
+        menuDataSource = MenuTableViewDataSource(menu: LaunchMenu(), navigationController: navigationController)
         tableView.dataSource = menuDataSource
+        tableView.delegate = menuDataSource
         menuDataSource?.registerCellsForTableView(tableView: tableView)
         
-        // Use custom code to react to menu
-        
-        tableView.delegate = self
-        
     }
-}
-
-extension LaunchMenuViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "WeatherDisplay", bundle: nil)
-        let vc = storyboard.instantiateInitialViewController() as! WeatherDisplayViewController
-        
-        let weatherService = WeatherService(dataSource: FixedWeatherSource())
-        vc.inject(weatherService: weatherService, locationService: LocationService())
-
-        navigationController?.show(vc, sender: self)
-    }
-    
 }
