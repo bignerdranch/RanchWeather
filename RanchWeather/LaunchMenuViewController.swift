@@ -56,8 +56,9 @@ extension LaunchMenuViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "WeatherDisplay", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! WeatherDisplayViewController
         
-        // config
-        
+        let weatherService = WeatherService(dataSource: FixedWeatherSource())
+        vc.inject(weatherService: weatherService, locationService: LocationService())
+
         navigationController?.show(vc, sender: self)
     }
     

@@ -1,17 +1,22 @@
 import UIKit
 
-class WeatherDisplayViewController: UIViewController {
+class WeatherDisplayViewController: UIViewController, Injectable {
     
     @IBOutlet private var temperatureLabel: UILabel!
     @IBOutlet private var summaryLabel: UILabel!
     @IBOutlet private var dateLabel: UILabel!
     @IBOutlet private var imageView: UIImageView!
     
+    fileprivate var weatherService: WeatherService!
+    fileprivate var locationService: LocationService!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        assertDependencies()
         updateUI()
     }
     
+
     private func updateUI() {
         
         // TODO: Put common formatting of a "report" into a "report view model"
@@ -33,4 +38,17 @@ class WeatherDisplayViewController: UIViewController {
         
     }
     
+}
+
+//MARK: - Injectable
+extension WeatherDisplayViewController {
+    func inject(weatherService: WeatherService, locationService: LocationService) {
+        self.weatherService = weatherService
+        self.locationService = locationService
+    }
+    
+    func assertDependencies() {
+        assert(weatherService != nil)
+        assert(locationService != nil)
+    }
 }
