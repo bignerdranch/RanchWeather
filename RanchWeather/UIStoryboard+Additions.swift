@@ -5,6 +5,7 @@ extension UIStoryboard {
         case Main
         case WeatherDisplay
         case Feedback
+        case DebugMenu
     }
     
     private convenience init(_ identifier: Identifier) {
@@ -19,11 +20,11 @@ extension UIStoryboard {
         return UIStoryboard(.Feedback).instantiateInitialViewController() as! FeedbackFormViewController
     }
     
-//    static func termsConditionsController() -> TermsConditionsViewController {
-//        let navigationController = UIStoryboard(.FirstTimeUser).instantiateInitialViewController() as! UINavigationController
-//        let termsConditionsViewController = navigationController.viewControllers[0] as! TermsConditionsViewController
-//        return termsConditionsViewController
-//    }
+    static func debugViewControllerStack(configure: (DebugMenuViewController) -> Void) -> UINavigationController {
+        let navigationController = UIStoryboard(.DebugMenu).instantiateInitialViewController() as! UINavigationController
+        let debugMenu = navigationController.viewControllers[0] as! DebugMenuViewController
+        configure(debugMenu)
+        return navigationController
+    }
     
-
 }

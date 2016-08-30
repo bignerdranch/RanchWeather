@@ -1,6 +1,6 @@
 import UIKit
 
-class WeatherDisplayViewController: UIViewController, Injectable {
+class WeatherDisplayViewController: UIViewController {
     
     @IBOutlet private var temperatureLabel: UILabel!
     @IBOutlet private var summaryLabel: UILabel!
@@ -41,7 +41,7 @@ class WeatherDisplayViewController: UIViewController, Injectable {
 }
 
 //MARK: - Injectable
-extension WeatherDisplayViewController {
+extension WeatherDisplayViewController: Injectable {
     func inject(weatherService: WeatherService, locationService: LocationService) {
         self.weatherService = weatherService
         self.locationService = locationService
