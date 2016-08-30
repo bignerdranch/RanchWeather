@@ -6,6 +6,9 @@ protocol DebugMenuViewControllerDelegate {
 
 class DebugMenuViewController: UIViewController {
     
+    @IBOutlet fileprivate var themeSelectionSegmentControl: UISegmentedControl!
+    
+    
     fileprivate var userDefaults: UserDefaults!
     fileprivate var delegate: DebugMenuViewControllerDelegate?
 
@@ -13,10 +16,23 @@ class DebugMenuViewController: UIViewController {
         super.viewDidLoad()
         assertDependencies()
         setupViewControllerTitles()
+        setupThemeSegmentSelection()
     }
     
     @IBAction private func closeMenu(sender: AnyObject) {
         delegate?.debugMenuViewControllerDidFinsih(controller: self)
+    }
+    
+    @IBAction func themeButtonValueDidChange(_ sender: UISegmentedControl) {
+        switch themeSelectionSegmentControl.selectedSegmentIndex {
+        case 0:
+            UserDefaults.standard.theme = .ranch
+        case 1:
+            UserDefaults.standard.theme = .metro
+        default:
+            assertionFailure("Unexpected Segment Index")
+        }
+    
     }
     
 }
@@ -38,6 +54,15 @@ private extension DebugMenuViewController {
     
     func setupViewControllerTitles() {
         title = NSLocalizedString("DEBUG_MENU.TITLE", comment: "Debug Menu as the name of the debug tools view")
+    }
+    
+    func setupThemeSegmentSelection() {
+        switch UserDefaults.standard.theme {
+            case .ranch:
+                themeSelectionSegmentControl.selectedSegmentIndex = 0
+            case .metro:
+                themeSelectionSegmentControl.selectedSegmentIndex = 1
+        }
     }
     
 }

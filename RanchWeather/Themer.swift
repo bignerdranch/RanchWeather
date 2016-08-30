@@ -33,8 +33,81 @@ import CoreText
 //}
 
 struct Themer {
+    let theme: Theme
+    
+    init(theme: Theme) {
+        self.theme = theme
+        updateGlobalThemeSettings()
+    }
+    
+    func updateGlobalThemeSettings() {
+        updateNavigationBar()
+        reloadWindow()
+    }
+    
+    // Note: UIAppearance settings are only good for new views created and thus changing the values while the app is running
+    // does not cause a visual change. To force this one hacky option is to remove everything from the view hierachy and add it back
+    // which will utilize the new appearance settings.
+    func reloadWindow() {
+        let windows = UIApplication.shared.windows
+        for window in windows {
+            for view in window.subviews {
+                view.removeFromSuperview()
+                window.addSubview(view)
+            }
+        }
+    }
+    
+    func updateNavigationBar() {
+        let apperance = UINavigationBar.appearance()
+        apperance.barTintColor = theme.backgroundColor
+        apperance.titleTextAttributes = [NSForegroundColorAttributeName: theme.foregroundTextColor]
+        apperance.tintColor = theme.tintColor
+    }
+}
+
+enum Theme: String {
+    
+    case ranch = "com.ranchweather.theme-name.ranch"
+    case metro = "com.ranchweather.theme-name.metro"
+    
+    var foregroundTextColor: UIColor {
+        switch self {
+        case .ranch: return UIColor(hex: 0xEE00EE)
+        case .metro: return UIColor(hex: 0x33FF33)
+        }
+    }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .ranch: return UIColor(hex: 0x33FF33)
+        case .metro: return UIColor(hex: 0xEE00EE)
+        }
+    }
+    
+    var tintColor: UIColor {
+        switch self {
+        case .ranch: return UIColor.blue
+        case .metro: return UIColor.orange
+        }
+    }
     
 }
+
+//protocol Theme {
+//    var foregroundTextColor: UIColor {get}
+//    var backgroundColor: UIColor {get}
+//}
+//
+//struct RanchTheme: Theme {
+//    let foregroundTextColor = UIColor(hex: 0xEEEEEE)
+//    let backgroundColor = UIColor(hex: 0x333333)
+//}
+//
+//struct MetroTheme: Theme {
+//    let foregroundTextColor = UIColor(hex: 0x333333)
+//    let backgroundColor = UIColor(hex: 0xEEEEEE)
+//}
 
 //extension Themer {
 //    static func set(batteryCardCell batteryCardCell: UICollectionViewCell) {

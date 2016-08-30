@@ -22,6 +22,7 @@
 		1ABFBA961D747E2C004AD49A /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABFBA951D747E2C004AD49A /* Injectable.swift */; };
 		1ABFBA991D74E9B4004AD49A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABFBA981D74E9B4004AD49A /* LocationService.swift */; };
 		1AE1B7F31D752F9100681068 /* Themer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1B7F21D752F9100681068 /* Themer.swift */; };
+		1AE1B7F51D7536B200681068 /* UserDefaults+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1B7F41D7536B200681068 /* UserDefaults+Additions.swift */; };
 		1AEF35C11D6FB31300B89078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF35C01D6FB31300B89078 /* AppDelegate.swift */; };
 		1AEF35C61D6FB31300B89078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AEF35C41D6FB31300B89078 /* Main.storyboard */; };
 		1AEF35C81D6FB31300B89078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AEF35C71D6FB31300B89078 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		1ABFBA951D747E2C004AD49A /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
 		1ABFBA981D74E9B4004AD49A /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1AE1B7F21D752F9100681068 /* Themer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themer.swift; sourceTree = "<group>"; };
+		1AE1B7F41D7536B200681068 /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
 		1AEF35BD1D6FB31300B89078 /* RanchWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RanchWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AEF35C01D6FB31300B89078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AEF35C51D6FB31300B89078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				1ABFBA951D747E2C004AD49A /* Injectable.swift */,
 				1AA8C81E1D750B620010088D /* UIStoryboard+Additions.swift */,
+				1AE1B7F41D7536B200681068 /* UserDefaults+Additions.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				1ABFBA831D73B372004AD49A /* WeatherDisplayViewController.swift in Sources */,
 				1ABFBA931D747AAA004AD49A /* FixedWeatherSource.swift in Sources */,
 				1AEF35C11D6FB31300B89078 /* AppDelegate.swift in Sources */,
+				1AE1B7F51D7536B200681068 /* UserDefaults+Additions.swift in Sources */,
 				1ABFBA911D74697A004AD49A /* ForcastIOWeatherSource.swift in Sources */,
 				1ABFBA991D74E9B4004AD49A /* LocationService.swift in Sources */,
 				1AA8C81B1D74F5870010088D /* FeedbackFormViewController.swift in Sources */,

@@ -18,16 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug Stuff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRM-wA-KWi">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eqJ-fX-SuC">
+                                <segments>
+                                    <segment title="Ranch"/>
+                                    <segment title="Metro"/>
+                                </segments>
+                                <connections>
+                                    <action selector="themeButtonValueDidChange:" destination="vOA-Ad-RXM" eventType="valueChanged" id="UQU-c3-c4R"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xRM-wA-KWi" firstAttribute="centerY" secondItem="tLI-uu-5Ed" secondAttribute="centerY" id="Omf-67-2ul"/>
-                            <constraint firstItem="xRM-wA-KWi" firstAttribute="centerX" secondItem="tLI-uu-5Ed" secondAttribute="centerX" id="QTj-ns-L6Y"/>
+                            <constraint firstItem="eqJ-fX-SuC" firstAttribute="centerX" secondItem="tLI-uu-5Ed" secondAttribute="centerX" id="VVd-fL-XhE"/>
+                            <constraint firstItem="eqJ-fX-SuC" firstAttribute="centerY" secondItem="tLI-uu-5Ed" secondAttribute="centerY" id="rqQ-PP-ElD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tWN-lz-89o">
@@ -37,6 +41,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="themeSelectionSegmentControl" destination="eqJ-fX-SuC" id="W4A-k4-McC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhH-kO-D9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
