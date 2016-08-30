@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1AA8C81B1D74F5870010088D /* FeedbackFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8C81A1D74F5870010088D /* FeedbackFormViewController.swift */; };
 		1AA8C81D1D74F5A50010088D /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA8C81C1D74F5A50010088D /* Feedback.storyboard */; };
+		1AA8C81F1D750B620010088D /* UIStoryboard+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8C81E1D750B620010088D /* UIStoryboard+Additions.swift */; };
 		1ABFBA831D73B372004AD49A /* WeatherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABFBA821D73B372004AD49A /* WeatherDisplayViewController.swift */; };
 		1ABFBA861D73B3A7004AD49A /* WeatherDisplay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABFBA841D73B3A7004AD49A /* WeatherDisplay.storyboard */; };
 		1ABFBA891D73C2BA004AD49A /* AssetCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABFBA881D73C2BA004AD49A /* AssetCatalog.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		1AA8C81A1D74F5870010088D /* FeedbackFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackFormViewController.swift; sourceTree = "<group>"; };
 		1AA8C81C1D74F5A50010088D /* Feedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
+		1AA8C81E1D750B620010088D /* UIStoryboard+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Additions.swift"; sourceTree = "<group>"; };
 		1ABFBA821D73B372004AD49A /* WeatherDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDisplayViewController.swift; sourceTree = "<group>"; };
 		1ABFBA851D73B3A7004AD49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WeatherDisplay.storyboard; sourceTree = "<group>"; };
 		1ABFBA881D73C2BA004AD49A /* AssetCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCatalog.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABFBA951D747E2C004AD49A /* Injectable.swift */,
+				1AA8C81E1D750B620010088D /* UIStoryboard+Additions.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				1ABFBA911D74697A004AD49A /* ForcastIOWeatherSource.swift in Sources */,
 				1ABFBA991D74E9B4004AD49A /* LocationService.swift in Sources */,
 				1AA8C81B1D74F5870010088D /* FeedbackFormViewController.swift in Sources */,
+				1AA8C81F1D750B620010088D /* UIStoryboard+Additions.swift in Sources */,
 				1AEF35E91D6FBA6C00B89078 /* MenuTableViewDataSource.swift in Sources */,
 				1AEF35EE1D6FD0F400B89078 /* LaunchMenu.swift in Sources */,
 				1ABFBA891D73C2BA004AD49A /* AssetCatalog.swift in Sources */,

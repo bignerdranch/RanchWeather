@@ -11,9 +11,8 @@ struct LaunchMenu: Menu {
         let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
             
             if let navigationController = navigationController {
-                let storyboard = UIStoryboard(name: "WeatherDisplay", bundle: nil)
-                let vc = storyboard.instantiateInitialViewController() as! WeatherDisplayViewController
                 
+                let vc = UIStoryboard.weatherDisplayViewController()
                 let weatherService = WeatherService(dataSource: FixedWeatherSource())
                 vc.inject(weatherService: weatherService, locationService: LocationService())
                 
@@ -48,8 +47,7 @@ struct LaunchMenu: Menu {
         let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
             
             if let navigationController = navigationController {
-                let storyboard = UIStoryboard(name: "Feedback", bundle: nil)
-                let vc = storyboard.instantiateInitialViewController() as! FeedbackFormViewController
+                let vc = UIStoryboard.feedbackViewController()
                 navigationController.show(vc, sender: self)
             }
             
