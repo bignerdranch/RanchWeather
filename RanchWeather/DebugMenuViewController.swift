@@ -8,7 +8,6 @@ class DebugMenuViewController: UIViewController {
     
     @IBOutlet fileprivate var themeSelectionSegmentControl: UISegmentedControl!
     
-    
     fileprivate var userDefaults: UserDefaults!
     fileprivate var delegate: DebugMenuViewControllerDelegate?
 
@@ -26,13 +25,12 @@ class DebugMenuViewController: UIViewController {
     @IBAction func themeButtonValueDidChange(_ sender: UISegmentedControl) {
         switch themeSelectionSegmentControl.selectedSegmentIndex {
         case 0:
-            UserDefaults.standard.theme = .ranch
+            UserDefaults.standard.theme = .day
         case 1:
-            UserDefaults.standard.theme = .metro
+            UserDefaults.standard.theme = .night
         default:
             assertionFailure("Unexpected Segment Index")
         }
-    
     }
     
 }
@@ -58,9 +56,9 @@ private extension DebugMenuViewController {
     
     func setupThemeSegmentSelection() {
         switch UserDefaults.standard.theme {
-            case .ranch:
+            case .day:
                 themeSelectionSegmentControl.selectedSegmentIndex = 0
-            case .metro:
+            case .night:
                 themeSelectionSegmentControl.selectedSegmentIndex = 1
         }
     }

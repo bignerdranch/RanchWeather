@@ -7,21 +7,20 @@ extension UserDefaults {
     }
     
     struct Key {
-        static let theme = "com.ranchweather.user-defaults.theme"
+        static let themeIdentifier = "com.ranchweather.user-defaults.theme"
 
     }
     
     var theme: Theme {
         get {
-            if let themeName = string(forKey: Key.theme) {
-                return Theme(rawValue: themeName)!
+            if let themeIdentifier = string(forKey: Key.themeIdentifier), let foundTheme = Theme(rawValue: themeIdentifier) {
+                return foundTheme
             } else {
-                return Theme.ranch
+                return Theme.day
             }
         }
         set {
-            set(newValue.rawValue, forKey: Key.theme)
-            synchronize()
+            set(newValue.rawValue, forKey: Key.themeIdentifier)
             NotificationCenter.default.post(name: Notifications.themeDidChange, object: self)
         }
     }

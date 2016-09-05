@@ -8,12 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         listenForThemeChange()
+        updateStatusBar(forTheme: UserDefaults.standard.theme)
         return true
     }
 
 }
 
-private extension AppDelegate {
+fileprivate extension AppDelegate {
     
     func listenForThemeChange() {
         NotificationCenter.default.addObserver(self, selector: #selector(respondToThemeChange), name: UserDefaults.Notifications.themeDidChange, object: nil)
@@ -21,7 +22,18 @@ private extension AppDelegate {
     
     @objc func respondToThemeChange(note: Notification) {
         // Update themer
-        currentThemer = Themer(theme: UserDefaults.standard.theme)
+        let newTheme = UserDefaults.standard.theme
+        currentThemer = Themer(theme: newTheme)
+        updateStatusBar(forTheme: newTheme)
+    }
+    
+    func updateStatusBar(forTheme theme: Theme) {
+        switch theme {
+        case .day:
+            UIApplication.shared.statusBarStyle = .default
+        case .night:
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
     }
     
 }

@@ -20,8 +20,8 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eqJ-fX-SuC">
                                 <segments>
-                                    <segment title="Ranch"/>
-                                    <segment title="Metro"/>
+                                    <segment title="Day"/>
+                                    <segment title="Night"/>
                                 </segments>
                                 <connections>
                                     <action selector="themeButtonValueDidChange:" destination="vOA-Ad-RXM" eventType="valueChanged" id="UQU-c3-c4R"/>
