@@ -3,7 +3,7 @@ import UIKit
 struct MenuItem {
     let title: String
     let details: String?
-    let runAction: (() -> ())?
+    let runAction: ((UINavigationController?) -> ())?
 }
 
 struct MenuSection {

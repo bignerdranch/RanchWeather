@@ -19,3 +19,11 @@
 
 /* Herndon, VA as a fixed location menu choice */
 "LAUNCH_MENU.FIXED_LOCATION.HERNDON_VA.TITLE" = "Herndon, VA";
+
+/* Send Feedback as a menu choice */
+"LAUNCH_MENU.SEND_FEEDBACK.TITLE" = "Send Feedback";
+
+// MARK: Debug Menu
+
+/* Debug Menu as the name of the debug tools view */
+"DEBUG_MENU.TITLE" = "Debug Menu";

@@ -1,9 +1,30 @@
-import Foundation
+import UIKit
 
 struct LaunchMenu: Menu {
     
     var sections: [MenuSection] {
-        return [currentLocation, fixedLocations]
+        return [currentLocation, fixedLocations, submitFeedback]
+    }
+    
+    fileprivate var currentLocation: MenuSection {
+        let item1Title = NSLocalizedString("LAUNCH_MENU.CURRENT_LOCATION.TITLE", comment: "Current Location as a menu choice")
+        let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
+            
+            if let navigationController = navigationController {
+                
+                let vc = UIStoryboard.weatherDisplayViewController()
+                let weatherService = WeatherService(dataSource: FixedWeatherSource())
+                vc.inject(weatherService: weatherService, locationService: LocationService())
+                
+                navigationController.show(vc, sender: self)
+            }
+            
+            
+            
+            
+            
+        })
+        return MenuSection(title: nil, items: [item1])
     }
     
     fileprivate var fixedLocations: MenuSection {
@@ -21,10 +42,17 @@ struct LaunchMenu: Menu {
         return MenuSection(title: sectionTitle, items: [philly, atlanta, herndon])
     }
     
-    fileprivate var currentLocation: MenuSection {
-        let item1Title = NSLocalizedString("LAUNCH_MENU.CURRENT_LOCATION.TITLE", comment: "Current Location as a menu choice")
-        let item1 = MenuItem(title: item1Title, details: nil, runAction: nil)
+    fileprivate var submitFeedback: MenuSection {
+        let item1Title = NSLocalizedString("LAUNCH_MENU.SEND_FEEDBACK.TITLE", comment: "Send Feedback as a menu choice")
+        let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
+            
+            if let navigationController = navigationController {
+                let vc = UIStoryboard.feedbackViewController()
+                navigationController.show(vc, sender: self)
+            }
+            
+        })
         return MenuSection(title: nil, items: [item1])
     }
-    
+
 }

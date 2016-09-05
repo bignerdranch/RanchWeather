@@ -1,11 +1,13 @@
 import UIKit
 
-class MenuTableViewDataSource: NSObject, UITableViewDataSource {
+class MenuTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     let menu: Menu
+    let navigationController: UINavigationController
     
-    init(menu: Menu) {
+    init(menu: Menu, navigationController: UINavigationController) {
         self.menu = menu
+        self.navigationController = navigationController
     }
     
     func registerCellsForTableView(tableView: UITableView) {
@@ -35,6 +37,17 @@ class MenuTableViewDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return menu.sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = menu.sections[indexPath.section].items[indexPath.row]
+        if let runAction = item.runAction {
+            runAction(navigationController)
+        } else {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
     }
     
 }

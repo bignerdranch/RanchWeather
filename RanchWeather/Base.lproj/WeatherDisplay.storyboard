@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iGh-xm-7It">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather Display View Controller-->
+        <scene sceneID="DLS-QA-e7I">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDisplayViewController" id="iGh-xm-7It" customClass="WeatherDisplayViewController" customModule="RanchWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G0q-KH-GiK"/>
+                        <viewControllerLayoutGuide type="bottom" id="AHB-6F-e8f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7nH-mr-0qF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQl-nR-kU3"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-gf-Idh">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atu-z9-V72">
+                                        <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMv-uT-TOG">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auU-0r-zw7">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69809503424657537" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="auU-0r-zw7" firstAttribute="centerX" secondItem="Atu-z9-V72" secondAttribute="centerX" id="5y3-hA-MVE"/>
+                                    <constraint firstAttribute="centerX" secondItem="Atu-z9-V72" secondAttribute="centerX" id="6Rg-5X-3Rh"/>
+                                    <constraint firstAttribute="height" constant="150" id="8J2-1R-nAz"/>
+                                    <constraint firstItem="auU-0r-zw7" firstAttribute="top" secondItem="Atu-z9-V72" secondAttribute="bottom" id="eEm-ZM-FvK"/>
+                                    <constraint firstItem="vMv-uT-TOG" firstAttribute="top" secondItem="auU-0r-zw7" secondAttribute="bottom" constant="8" id="fyl-he-k1j"/>
+                                    <constraint firstAttribute="centerY" secondItem="Atu-z9-V72" secondAttribute="centerY" constant="29" id="vix-iy-mQy"/>
+                                    <constraint firstItem="auU-0r-zw7" firstAttribute="centerX" secondItem="vMv-uT-TOG" secondAttribute="centerX" constant="0.5" id="y3j-HB-8cQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fQl-nR-kU3" firstAttribute="leading" secondItem="7nH-mr-0qF" secondAttribute="leading" id="2rT-uA-pST"/>
+                            <constraint firstItem="ipa-gf-Idh" firstAttribute="leading" secondItem="7nH-mr-0qF" secondAttribute="leadingMargin" id="7TG-6B-all"/>
+                            <constraint firstItem="fQl-nR-kU3" firstAttribute="top" secondItem="7nH-mr-0qF" secondAttribute="top" id="RrX-XA-1rR"/>
+                            <constraint firstItem="ipa-gf-Idh" firstAttribute="trailing" secondItem="7nH-mr-0qF" secondAttribute="trailingMargin" id="mUV-KD-Gcj"/>
+                            <constraint firstItem="AHB-6F-e8f" firstAttribute="top" secondItem="fQl-nR-kU3" secondAttribute="bottom" id="row-vf-QO6"/>
+                            <constraint firstItem="AHB-6F-e8f" firstAttribute="top" secondItem="ipa-gf-Idh" secondAttribute="bottom" constant="20" id="uuD-k5-TI7"/>
+                            <constraint firstAttribute="trailing" secondItem="fQl-nR-kU3" secondAttribute="trailing" id="vM1-op-Vk6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="vMv-uT-TOG" id="P04-5l-MmN"/>
+                        <outlet property="imageView" destination="fQl-nR-kU3" id="eJZ-5f-byU"/>
+                        <outlet property="summaryLabel" destination="auU-0r-zw7" id="lF9-1j-hXQ"/>
+                        <outlet property="temperatureLabel" destination="Atu-z9-V72" id="lxs-74-VRS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tv5-L7-Rsi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="142"/>
+        </scene>
+    </scenes>
+</document>
