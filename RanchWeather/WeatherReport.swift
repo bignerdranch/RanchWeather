@@ -4,5 +4,5 @@ struct WeatherReport {
     let date: Date
     let summary: String
     let temperature: Double
-    let icon: UIImage
+    let iconName: String
 }

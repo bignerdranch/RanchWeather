@@ -59,10 +59,8 @@ extension ForcastIOWeatherSource {
                     let date = Date(timeIntervalSince1970: currentInfo["time"] as! TimeInterval)
                     let summary = currentInfo["summary"] as! String
                     let temperature = currentInfo["temperature"] as! Double
-                    // TODO: This could fail. Should be optional?
-                    let assetName = UIImage.Asset(rawValue: currentInfo["icon"] as! String)
-                    let icon = UIImage(asset: assetName!)
-                    let newReport = WeatherReport(date: date, summary: summary, temperature: temperature, icon: icon!)
+                    let iconName = currentInfo["icon"] as! String
+                    let newReport = WeatherReport(date: date, summary: summary, temperature: temperature, iconName: iconName)
                     return ResponseParser.Result.success(newReport)
                 }
                 

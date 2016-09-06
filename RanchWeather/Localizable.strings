@@ -27,3 +27,11 @@
 
 /* Debug Menu as the name of the debug tools view */
 "DEBUG_MENU.TITLE" = "Debug Menu";
+
+// MARK: Weather Display
+
+/* Weather Display View Controller title as the info is loading */
+"WEATHER_DISPLAY.TITLE.LOADING" = "Loading";
+
+/* Weather Display View Controller title with info loaded */
+"WEATHER_DISPLAY.TITLE" = "Current Weather";

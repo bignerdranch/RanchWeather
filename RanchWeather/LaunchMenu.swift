@@ -11,17 +11,12 @@ struct LaunchMenu: Menu {
         let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
             
             if let navigationController = navigationController {
-                
                 let vc = UIStoryboard.weatherDisplayViewController()
-                let weatherService = WeatherService(dataSource: FixedWeatherSource())
+                let dataSource = ForcastIOWeatherSource(APIKey: ConfigurationSettings.focastIOAPIKey)
+                let weatherService = WeatherService(dataSource: dataSource)
                 vc.inject(weatherService: weatherService, locationService: LocationService())
-                
                 navigationController.show(vc, sender: self)
             }
-            
-            
-            
-            
             
         })
         return MenuSection(title: nil, items: [item1])

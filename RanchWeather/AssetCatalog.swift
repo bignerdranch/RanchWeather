@@ -12,6 +12,7 @@ extension UIImage {
         case cloudy            = "cloudy"
         case partlyCloudyDay   = "partly-cloudy-day"
         case partlyCloudyNight = "partly-cloudy-night"
+        case loading           = "loading"
     }
     
     convenience init!(asset: Asset) {
