@@ -5,17 +5,25 @@ class LaunchMenuViewController: UIViewController {
     @IBOutlet fileprivate var tableView: UITableView!
     
     fileprivate var menuDataSource: MenuTableViewDataSource?
+    fileprivate var themer: Themer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assertDependencies()
         setupDebugGesture()
         setupViewControllerTitles()
         setupTableView()
+        themeView()
+        subscribeForThemeChanges()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         deselectTableViewRowsIfNeeded()
+    }
+    
+    deinit {
+        unsubscribeForThemeChanges()
     }
 }
 
@@ -33,13 +41,13 @@ private extension LaunchMenuViewController {
     func setupDebugGesture() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showDebugMenu))
         tapRecognizer.numberOfTapsRequired = 4
-        tapRecognizer.numberOfTouchesRequired = 2
+        tapRecognizer.numberOfTouchesRequired = 1
         view.addGestureRecognizer(tapRecognizer)
     }
     
     @objc func showDebugMenu(gestureRecognizer: UIGestureRecognizer) {
         let debugNavigationController = UIStoryboard.debugViewControllerStack { (debugVC) in
-            debugVC.inject(userDefaults: UserDefaults.standard, delegate: self)
+            debugVC.inject(userDefaults: UserDefaults.standard, delegate: self, themer: themer)
         }
         present(debugNavigationController, animated: true, completion: nil)
     }
@@ -68,10 +76,47 @@ private extension LaunchMenuViewController {
         }
         
         // Use shared-code to render menu
-        menuDataSource = MenuTableViewDataSource(menu: LaunchMenu(), navigationController: navigationController)
+        menuDataSource = MenuTableViewDataSource(menu: LaunchMenu(), navigationController: navigationController, themer: themer)
         tableView.dataSource = menuDataSource
         tableView.delegate = menuDataSource
         menuDataSource?.registerCellsForTableView(tableView: tableView)
+        tableView.reloadData()
         
+    }
+}
+
+//MARK: - Injectable
+extension LaunchMenuViewController: Injectable {
+    func inject(themer: Themer) {
+        self.themer = themer
+    }
+    
+    func assertDependencies() {
+        assert(themer != nil)
+    }
+}
+
+//MARK: - Theme Stuff
+fileprivate extension LaunchMenuViewController {
+    
+    func themeView() {
+        themer.theme(tableView: tableView)
+        tableView.reloadData()
+    }
+    
+    func subscribeForThemeChanges() {
+        NotificationCenter.default.addObserver(self, selector: #selector(respondToThemeChange), name: UserDefaults.Notifications.themeDidChange, object: nil)
+    }
+    
+    func unsubscribeForThemeChanges() {
+        NotificationCenter.default.removeObserver(self, name: UserDefaults.Notifications.themeDidChange, object: nil)
+    }
+    
+    @objc func respondToThemeChange(note: Notification) {
+        // Update themer
+        let newTheme = UserDefaults.standard.theme
+        themer = Themer(theme: newTheme)
+        setupTableView() // so it picks up new themer as well
+        themeView()
     }
 }

@@ -7,8 +7,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var currentThemer = Themer(theme: UserDefaults.standard.theme)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        listenForThemeChange()
+        
+        // Inject the themer into the launch menu
+        let nav = window?.rootViewController as! UINavigationController
+        let menuVC = nav.topViewController as! LaunchMenuViewController
+        menuVC.inject(themer: currentThemer)
+        
+        // setup global theme change subscriptions
+        subscribeForThemeChanges()
         updateStatusBar(forTheme: UserDefaults.standard.theme)
+        
         return true
     }
 
@@ -16,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 fileprivate extension AppDelegate {
     
-    func listenForThemeChange() {
+    func subscribeForThemeChanges() {
         NotificationCenter.default.addObserver(self, selector: #selector(respondToThemeChange), name: UserDefaults.Notifications.themeDidChange, object: nil)
     }
     

@@ -3,10 +3,10 @@ import CoreText
 
 private enum BNRColors {
     // Note: These are called hexadecimal literals
-    static let OffWhite = UIColor(hex: 0xEEEEEE)
-    static let OffBlack = UIColor(hex: 0x333333)
-    static let Red      = UIColor(hex: 0xE15827)
-    static let Yellow   = UIColor(hex: 0xECB02F)
+    static let OffWhite  = UIColor(hex: 0xEEEEEE)
+    static let OffBlack  = UIColor(hex: 0x333333)
+    static let Red       = UIColor(hex: 0xE15827)
+    static let Yellow    = UIColor(hex: 0xECB02F)
 }
 
 enum Theme: String {
@@ -17,6 +17,27 @@ enum Theme: String {
         switch self {
         case .day:   return BNRColors.OffWhite
         case .night: return BNRColors.OffBlack
+        }
+    }
+    
+    var tableViewBackgroundColor: UIColor {
+        switch self {
+        case .day:   return BNRColors.OffWhite
+        case .night: return BNRColors.OffBlack
+        }
+    }
+    
+    var tableViewCellBackgroundColor: UIColor {
+        switch self {
+        case .day:   return UIColor.white
+        case .night: return UIColor.black
+        }
+    }
+    
+    var tableViewCellTextColor: UIColor {
+        switch self {
+        case .day:   return BNRColors.OffBlack
+        case .night: return BNRColors.OffWhite
         }
     }
     
@@ -77,6 +98,21 @@ struct Themer {
         apperance.barTintColor = theme.backgroundColor
         apperance.titleTextAttributes = [NSForegroundColorAttributeName: theme.textColor]
         apperance.tintColor = theme.tintColor
+    }
+    
+    // Manual calls
+    
+    func theme(tableView: UITableView) {
+        tableView.backgroundColor = theme.tableViewBackgroundColor
+    }
+    
+    func theme(tableViewCell cell: UITableViewCell) {
+        cell.backgroundColor = theme.tableViewCellBackgroundColor
+        cell.textLabel?.textColor = theme.tableViewCellTextColor
+    }
+    
+    func theme(backgroundView view: UIView) {
+        view.backgroundColor = theme.tableViewBackgroundColor
     }
 }
 

@@ -4,10 +4,12 @@ class MenuTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
     
     let menu: Menu
     let navigationController: UINavigationController
+    let themer: Themer?
     
-    init(menu: Menu, navigationController: UINavigationController) {
+    init(menu: Menu, navigationController: UINavigationController, themer: Themer?) {
         self.menu = menu
         self.navigationController = navigationController
+        self.themer = themer
     }
     
     func registerCellsForTableView(tableView: UITableView) {
@@ -25,6 +27,7 @@ class MenuTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.cellIdentifier, for: indexPath)
         configureCell(cell, indexPath: indexPath)
+        themer?.theme(tableViewCell: cell)
         return cell
     }
     

@@ -10,12 +10,19 @@ class DebugMenuViewController: UIViewController {
     
     fileprivate var userDefaults: UserDefaults!
     fileprivate var delegate: DebugMenuViewControllerDelegate?
+    fileprivate var themer: Themer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         assertDependencies()
         setupViewControllerTitles()
         setupThemeSegmentSelection()
+        themeView()
+        subscribeForThemeChanges()
+    }
+    
+    deinit {
+        unsubscribeForThemeChanges()
     }
     
     @IBAction private func closeMenu(sender: AnyObject) {
@@ -37,13 +44,15 @@ class DebugMenuViewController: UIViewController {
 
 //MARK: - Injectable
 extension DebugMenuViewController: Injectable {
-    func inject(userDefaults: UserDefaults, delegate: DebugMenuViewControllerDelegate?) {
+    func inject(userDefaults: UserDefaults, delegate: DebugMenuViewControllerDelegate?, themer: Themer?) {
         self.userDefaults = userDefaults
         self.delegate = delegate
+        self.themer = themer
     }
     
     func assertDependencies() {
         assert(userDefaults != nil)
+        assert(themer != nil)
     }
 }
 
@@ -63,4 +72,27 @@ private extension DebugMenuViewController {
         }
     }
     
+}
+
+//MARK: - Theme Stuff
+fileprivate extension DebugMenuViewController {
+    
+    func themeView() {
+        themer.theme(backgroundView: view)
+    }
+    
+    func subscribeForThemeChanges() {
+        NotificationCenter.default.addObserver(self, selector: #selector(respondToThemeChange), name: UserDefaults.Notifications.themeDidChange, object: nil)
+    }
+    
+    func unsubscribeForThemeChanges() {
+        NotificationCenter.default.removeObserver(self, name: UserDefaults.Notifications.themeDidChange, object: nil)
+    }
+    
+    @objc func respondToThemeChange(note: Notification) {
+        // Update themer
+        let newTheme = UserDefaults.standard.theme
+        themer = Themer(theme: newTheme)
+        themeView()
+    }
 }

@@ -9,11 +9,11 @@ This is an app that was developed to demo various code patterns presented in a t
 ## TODO
 
 * Make slide visuals to express MultipleDataSources
-* Build out the Forms system. (might be dropped)
-* Finish the Theming
-* Do localization
-* Add animation of detail box.
 * Record demo, post for feedback.
+* Do localization
+* Build out the Forms system. (might be dropped)
+* Add animation of detail box.
+* Add testing.
 
 ## Contact Info
 
