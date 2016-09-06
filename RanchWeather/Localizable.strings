@@ -8,17 +8,19 @@
 /* Current Location as a menu choice */
 "LAUNCH_MENU.CURRENT_LOCATION.TITLE" = "Current Location";
 
-/* Fixed Locations as a menu section title */
-"LAUNCH_MENU.FIXED_LOCATION.TITLE" = "Fixed Locations";
+/* Scenarios as a menu section title */
+"LAUNCH_MENU.SCENARIOS.TITLE" = "Scenarios";
 
-/* Philadelphia, PA as a fixed location menu choice */
-"LAUNCH_MENU.FIXED_LOCATION.PHILADELPHIA_PA.TITLE" = "Philadelphia, PA";
-
-/* Altlanta, GA as a fixed location menu choice */
-"LAUNCH_MENU.FIXED_LOCATION.ATLANTA_GA.TITLE" = "Atlanta, GA";
-
-/* Herndon, VA as a fixed location menu choice */
-"LAUNCH_MENU.FIXED_LOCATION.HERNDON_VA.TITLE" = "Herndon, VA";
+"LAUNCH_MENU.SCENARIOS.CLEAR_DAY.TITLE" = "Clear Day";
+"LAUNCH_MENU.SCENARIOS.CLEAR_NIGHT.TITLE" = "Clear Night";
+"LAUNCH_MENU.SCENARIOS.RAIN.TITLE" = "Rain";
+"LAUNCH_MENU.SCENARIOS.SNOW.TITLE" = "Snow";
+"LAUNCH_MENU.SCENARIOS.SLEET.TITLE" = "Sleet";
+"LAUNCH_MENU.SCENARIOS.WIND.TITLE" = "Wind";
+"LAUNCH_MENU.SCENARIOS.FOG.TITLE" = "Fog";
+"LAUNCH_MENU.SCENARIOS.CLOUDY.TITLE" = "Cloudy";
+"LAUNCH_MENU.SCENARIOS.PARTLY_CLOUDY_DAY.TITLE" = "Partly Cloudy Day";
+"LAUNCH_MENU.SCENARIOS.PARTLY_CLOUDY_NIGHT.TITLE" = "Partly Cloudy Night";
 
 /* Send Feedback as a menu choice */
 "LAUNCH_MENU.SEND_FEEDBACK.TITLE" = "Send Feedback";

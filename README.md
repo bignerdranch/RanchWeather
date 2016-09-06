@@ -8,8 +8,6 @@ This is an app that was developed to demo various code patterns presented in a t
 
 ## TODO
 
-* Finish building out WeatherService and have that feed the actual UI.
-* Finish building out the LocationService.
 * Make slide visuals to express MultipleDataSources
 * Build out the Forms system. (might be dropped)
 * Finish the Theming
