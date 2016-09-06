@@ -13,22 +13,20 @@ class WeatherDisplayViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     
     fileprivate var weatherService: WeatherService!
-    fileprivate var locationService: LocationService!
+    fileprivate var location: Location!
 
     private var displayMode = DisplayMode.loading
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assertDependencies()
-        
         updateUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // TODO: Submit real location
-        weatherService.fetchWeatherReport(latitude: 0.0, longitude: 0.0) { [weak self]  (result) in
+        weatherService.fetchWeatherReport(latitude: location.lat, longitude: location.lon) { [weak self] (result) in
             
             DispatchQueue.main.async {
                 switch result {
@@ -104,13 +102,13 @@ class WeatherDisplayViewController: UIViewController {
 
 //MARK: - Injectable
 extension WeatherDisplayViewController: Injectable {
-    func inject(weatherService: WeatherService, locationService: LocationService) {
+    func inject(weatherService: WeatherService, location: Location) {
         self.weatherService = weatherService
-        self.locationService = locationService
+        self.location = location
     }
     
     func assertDependencies() {
         assert(weatherService != nil)
-        assert(locationService != nil)
+        assert(location != nil)
     }
 }

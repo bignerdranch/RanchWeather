@@ -13,10 +13,7 @@ struct ForcastIOWeatherSource: WeatherServiceDataSource {
     func fetchWeatherReport(latitude: Double, longitude: Double, completion: @escaping (_ result: WeatherService.Result) -> Void) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        let allowed = NSCharacterSet.urlHostAllowed
-        let escapedAPIKey = APIKey.addingPercentEncoding(withAllowedCharacters: allowed)
-        // TODO: Honor incomming lat and lon, for now hardcode to IndyHall
-        let url = URL(string: "https://api.forecast.io/forecast/\(escapedAPIKey!)/39.950869,-75.145728")
+        let url = URL(string: "https://api.forecast.io/forecast/\(APIKey.urlEscape())/\(latitude),\(longitude)")
         let request = URLRequest(url: url!)
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if data != nil {

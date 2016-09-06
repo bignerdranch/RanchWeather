@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4D7F8C1D7F6A1600BEA6CE /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D7F8B1D7F6A1600BEA6CE /* String+Additions.swift */; };
 		1A9065411D7F517A00C42F35 /* ConfigurationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9065401D7F517A00C42F35 /* ConfigurationSettings.swift */; };
 		1A9065431D7F52A000C42F35 /* WeatherReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9065421D7F52A000C42F35 /* WeatherReportViewModel.swift */; };
 		1AA8C81B1D74F5870010088D /* FeedbackFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA8C81A1D74F5870010088D /* FeedbackFormViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A4D7F8B1D7F6A1600BEA6CE /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 		1A7EE83D1D7E0AC200A161F9 /* slide-code-samples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "slide-code-samples.playground"; sourceTree = "<group>"; };
 		1A7EE83E1D7E61D400A161F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A9065401D7F517A00C42F35 /* ConfigurationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationSettings.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				1ABFBA951D747E2C004AD49A /* Injectable.swift */,
 				1AA8C81E1D750B620010088D /* UIStoryboard+Additions.swift */,
 				1AE1B7F41D7536B200681068 /* UserDefaults+Additions.swift */,
+				1A4D7F8B1D7F6A1600BEA6CE /* String+Additions.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				1A9065431D7F52A000C42F35 /* WeatherReportViewModel.swift in Sources */,
 				1AE1B7F51D7536B200681068 /* UserDefaults+Additions.swift in Sources */,
 				1ABFBA911D74697A004AD49A /* ForcastIOWeatherSource.swift in Sources */,
+				1A4D7F8C1D7F6A1600BEA6CE /* String+Additions.swift in Sources */,
 				1ABFBA991D74E9B4004AD49A /* LocationService.swift in Sources */,
 				1AA8C81B1D74F5870010088D /* FeedbackFormViewController.swift in Sources */,
 				1AA8C81F1D750B620010088D /* UIStoryboard+Additions.swift in Sources */,

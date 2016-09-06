@@ -14,7 +14,9 @@ struct LaunchMenu: Menu {
                 let vc = UIStoryboard.weatherDisplayViewController()
                 let dataSource = ForcastIOWeatherSource(APIKey: ConfigurationSettings.focastIOAPIKey)
                 let weatherService = WeatherService(dataSource: dataSource)
-                vc.inject(weatherService: weatherService, locationService: LocationService())
+                // TODO: Would be nice to control this in defaults like theme
+                let location = Locations.cocoaConfDC
+                vc.inject(weatherService: weatherService, location: location)
                 navigationController.show(vc, sender: self)
             }
             

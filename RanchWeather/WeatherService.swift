@@ -20,7 +20,6 @@ struct WeatherService {
         case noDataError
     }
 
-    
     let dataSource: WeatherServiceDataSource
     
     init(dataSource: WeatherServiceDataSource) {
