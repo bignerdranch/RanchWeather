@@ -80,7 +80,7 @@ struct Themer {
     // Note: UIAppearance settings are only good for new 
     // views created and thus changing the values while 
     // the app is running does not cause a visual change. 
-    // To force this one hacky option is to remove everything 
+    // To force this, one hacky option is to remove everything 
     // from the view hierachy and add it back which will
     // utilize the new appearance settings.
     func reloadWindow() {

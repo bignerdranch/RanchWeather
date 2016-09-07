@@ -66,7 +66,7 @@
 		1ABFBA8D1D73C707004AD49A /* WeatherReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherReport.swift; sourceTree = "<group>"; };
 		1ABFBA901D74697A004AD49A /* ForcastIOWeatherSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForcastIOWeatherSource.swift; sourceTree = "<group>"; };
 		1ABFBA921D747AAA004AD49A /* FixedWeatherSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedWeatherSource.swift; sourceTree = "<group>"; };
-		1ABFBA951D747E2C004AD49A /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		1ABFBA951D747E2C004AD49A /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Injectable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1ABFBA981D74E9B4004AD49A /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1AE1B7F21D752F9100681068 /* Themer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themer.swift; sourceTree = "<group>"; };
 		1AE1B7F41D7536B200681068 /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		1AEF35D11D6FB31300B89078 /* RanchWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RanchWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AEF35D51D6FB31300B89078 /* RanchWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RanchWeatherTests.swift; sourceTree = "<group>"; };
 		1AEF35D71D6FB31300B89078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AEF35E11D6FB98A00B89078 /* LaunchMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchMenuViewController.swift; sourceTree = "<group>"; };
+		1AEF35E11D6FB98A00B89078 /* LaunchMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LaunchMenuViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1AEF35E41D6FBA2A00B89078 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		1AEF35E81D6FBA6C00B89078 /* MenuTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewDataSource.swift; sourceTree = "<group>"; };
 		1AEF35EB1D6FC37400B89078 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };

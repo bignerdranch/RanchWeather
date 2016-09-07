@@ -19,7 +19,7 @@ class WeatherDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assertDependencies()
+        checkDependencies()
         updateUI()
     }
     
@@ -107,8 +107,8 @@ extension WeatherDisplayViewController: Injectable {
         self.location = location
     }
     
-    func assertDependencies() {
-        assert(weatherService != nil)
-        assert(location != nil)
+    func checkDependencies() {
+        precondition(weatherService != nil)
+        precondition(location != nil)
     }
 }

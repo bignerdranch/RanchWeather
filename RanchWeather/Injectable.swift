@@ -9,10 +9,10 @@ protocol Injectable {
     // When honoring this protocol we expect you to make a method called
     // inject() that has the needed properties for this object.
     
-    // assertDependencies is a method intended to verify that our
-    // implicitly unwrapped optionals have been populated.
+    // checkDependencies is a method intended to verify that our
+    // implicitly unwrapped optionals preconditions have been populated.
     // It should called in an early life-cycle method where the
     // required dependancies should have already been set. 
     // For View Controllers, viewDidLoad() is a common choice.
-    func assertDependencies()
+    func checkDependencies()
 }

@@ -14,7 +14,7 @@ class DebugMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        assertDependencies()
+        checkDependencies()
         setupViewControllerTitles()
         setupThemeSegmentSelection()
         themeView()
@@ -50,9 +50,9 @@ extension DebugMenuViewController: Injectable {
         self.themer = themer
     }
     
-    func assertDependencies() {
-        assert(userDefaults != nil)
-        assert(themer != nil)
+    func checkDependencies() {
+        precondition(userDefaults != nil)
+        precondition(themer != nil)
     }
 }
 

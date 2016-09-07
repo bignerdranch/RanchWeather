@@ -9,7 +9,7 @@ class LaunchMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assertDependencies()
+        checkDependencies()
         setupDebugGesture()
         setupViewControllerTitles()
         setupTableView()
@@ -91,8 +91,8 @@ extension LaunchMenuViewController: Injectable {
         self.themer = themer
     }
     
-    func assertDependencies() {
-        assert(themer != nil)
+    func checkDependencies() {
+        precondition(themer != nil)
     }
 }
 
