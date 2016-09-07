@@ -3,10 +3,10 @@ import CoreText
 
 private enum BNRColors {
     // Note: These are called hexadecimal literals
-    static let OffWhite  = UIColor(hex: 0xEEEEEE)
-    static let OffBlack  = UIColor(hex: 0x333333)
-    static let Red       = UIColor(hex: 0xE15827)
-    static let Yellow    = UIColor(hex: 0xECB02F)
+    static let offWhite  = UIColor(hex: 0xEEEEEE)
+    static let offBlack  = UIColor(hex: 0x333333)
+    static let red       = UIColor(hex: 0xE15827)
+    static let yellow    = UIColor(hex: 0xECB02F)
 }
 
 enum Theme: String {
@@ -15,15 +15,15 @@ enum Theme: String {
     
     var backgroundColor: UIColor {
         switch self {
-        case .day:   return BNRColors.OffWhite
-        case .night: return BNRColors.OffBlack
+        case .day:   return BNRColors.offWhite
+        case .night: return BNRColors.offBlack
         }
     }
     
     var tableViewBackgroundColor: UIColor {
         switch self {
-        case .day:   return BNRColors.OffWhite
-        case .night: return BNRColors.OffBlack
+        case .day:   return BNRColors.offWhite
+        case .night: return BNRColors.offBlack
         }
     }
     
@@ -36,22 +36,22 @@ enum Theme: String {
     
     var tableViewCellTextColor: UIColor {
         switch self {
-        case .day:   return BNRColors.OffBlack
-        case .night: return BNRColors.OffWhite
+        case .day:   return BNRColors.offBlack
+        case .night: return BNRColors.offWhite
         }
     }
     
     var textColor: UIColor {
         switch self {
-        case .day:   return BNRColors.OffBlack
-        case .night: return BNRColors.OffWhite
+        case .day:   return BNRColors.offBlack
+        case .night: return BNRColors.offWhite
         }
     }
     
     var tintColor: UIColor {
         switch self {
-        case .day:   return BNRColors.Red
-        case .night: return BNRColors.Yellow
+        case .day:   return BNRColors.red
+        case .night: return BNRColors.yellow
         }
     }
     
@@ -102,16 +102,16 @@ struct Themer {
     
     // Manual calls
     
-    func theme(tableView: UITableView) {
+    func theme(_ tableView: UITableView) {
         tableView.backgroundColor = theme.tableViewBackgroundColor
     }
     
-    func theme(tableViewCell cell: UITableViewCell) {
+    func theme(_ cell: UITableViewCell) {
         cell.backgroundColor = theme.tableViewCellBackgroundColor
         cell.textLabel?.textColor = theme.tableViewCellTextColor
     }
     
-    func theme(backgroundView view: UIView) {
+    func theme(_ view: UIView) {
         view.backgroundColor = theme.tableViewBackgroundColor
     }
 }

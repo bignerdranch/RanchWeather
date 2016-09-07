@@ -1,27 +1,27 @@
 import UIKit
 
 extension UIStoryboard {
-    private enum Identifier: String {
-        case Main
-        case WeatherDisplay
-        case Feedback
-        case DebugMenu
+    private enum File: String {
+        case main
+        case weatherDisplay
+        case feedback
+        case debugMenu
     }
     
-    private convenience init(_ identifier: Identifier) {
-        self.init(name: identifier.rawValue, bundle: nil)
+    private convenience init(_ file: File) {
+        self.init(name: file.rawValue, bundle: nil)
     }
     
     static func weatherDisplayViewController() -> WeatherDisplayViewController {
-        return UIStoryboard(.WeatherDisplay).instantiateInitialViewController() as! WeatherDisplayViewController
+        return UIStoryboard(.weatherDisplay).instantiateInitialViewController() as! WeatherDisplayViewController
     }
     
     static func feedbackViewController() -> FeedbackFormViewController {
-        return UIStoryboard(.Feedback).instantiateInitialViewController() as! FeedbackFormViewController
+        return UIStoryboard(.feedback).instantiateInitialViewController() as! FeedbackFormViewController
     }
     
     static func debugViewControllerStack(configure: (DebugMenuViewController) -> Void) -> UINavigationController {
-        let navigationController = UIStoryboard(.DebugMenu).instantiateInitialViewController() as! UINavigationController
+        let navigationController = UIStoryboard(.debugMenu).instantiateInitialViewController() as! UINavigationController
         let debugMenu = navigationController.viewControllers[0] as! DebugMenuViewController
         configure(debugMenu)
         return navigationController

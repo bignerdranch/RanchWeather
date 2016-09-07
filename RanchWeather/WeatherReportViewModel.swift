@@ -6,12 +6,12 @@ struct WeatherReportViewModel {
     
     let temperatureFormatter = MeasurementFormatter()
     
-    var dateFormatter: DateFormatter {
+    let dateFormatter: DateFormatter =  {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .medium
         return dateFormatter
-    }
+    }()
     
     init(weatherReport: WeatherReport) {
         report = weatherReport

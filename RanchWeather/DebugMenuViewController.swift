@@ -1,7 +1,7 @@
 import UIKit
 
 protocol DebugMenuViewControllerDelegate {
-    func debugMenuViewControllerDidFinsih(controller: DebugMenuViewController)
+    func debugMenuViewControllerDidFinish(_ controller: DebugMenuViewController)
 }
 
 class DebugMenuViewController: UIViewController {
@@ -26,7 +26,7 @@ class DebugMenuViewController: UIViewController {
     }
     
     @IBAction private func closeMenu(sender: AnyObject) {
-        delegate?.debugMenuViewControllerDidFinsih(controller: self)
+        delegate?.debugMenuViewControllerDidFinish(self)
     }
     
     @IBAction func themeButtonValueDidChange(_ sender: UISegmentedControl) {
@@ -78,7 +78,7 @@ private extension DebugMenuViewController {
 fileprivate extension DebugMenuViewController {
     
     func themeView() {
-        themer.theme(backgroundView: view)
+        themer.theme(view)
     }
     
     func subscribeForThemeChanges() {

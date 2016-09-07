@@ -55,7 +55,7 @@ private extension LaunchMenuViewController {
 
 //MARK: - DebugMenuViewControllerDelegate
 extension LaunchMenuViewController: DebugMenuViewControllerDelegate {
-    func debugMenuViewControllerDidFinsih(controller: DebugMenuViewController) {
+    func debugMenuViewControllerDidFinish(_ controller: DebugMenuViewController) {
         dismiss(animated: true, completion: nil)
     }
 }
@@ -79,7 +79,7 @@ private extension LaunchMenuViewController {
         menuDataSource = MenuTableViewDataSource(menu: LaunchMenu(), navigationController: navigationController, themer: themer)
         tableView.dataSource = menuDataSource
         tableView.delegate = menuDataSource
-        menuDataSource?.registerCellsForTableView(tableView: tableView)
+        menuDataSource?.registerCellsFor(tableView)
         tableView.reloadData()
         
     }
@@ -100,7 +100,7 @@ extension LaunchMenuViewController: Injectable {
 fileprivate extension LaunchMenuViewController {
     
     func themeView() {
-        themer.theme(tableView: tableView)
+        themer.theme(tableView)
         tableView.reloadData()
     }
     

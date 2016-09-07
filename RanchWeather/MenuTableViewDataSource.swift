@@ -12,7 +12,7 @@ class MenuTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
         self.themer = themer
     }
     
-    func registerCellsForTableView(tableView: UITableView) {
+    func registerCellsFor(_ tableView: UITableView) {
         tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableViewCell.cellIdentifier)
     }
     
@@ -26,12 +26,12 @@ class MenuTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.cellIdentifier, for: indexPath)
-        configureCell(cell, indexPath: indexPath)
-        themer?.theme(tableViewCell: cell)
+        configure(cell, at: indexPath)
+        themer?.theme(cell)
         return cell
     }
     
-    func configureCell(_ cell: UITableViewCell, indexPath: IndexPath) {
+    func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
         let item = menu.sections[indexPath.section].items[indexPath.row]
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.details

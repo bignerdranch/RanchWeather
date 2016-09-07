@@ -16,8 +16,8 @@ struct ForcastIOWeatherSource: WeatherServiceDataSource {
         let url = URL(string: "https://api.forecast.io/forecast/\(APIKey.urlEscape())/\(latitude),\(longitude)")
         let request = URLRequest(url: url!)
         let dataTask = session.dataTask(with: request) { (data, response, error) in
-            if data != nil {
-                let parseResponse = ForcastIOWeatherSource.ResponseParser.parse(responseData: data!)
+            if let data = data {
+                let parseResponse = ForcastIOWeatherSource.ResponseParser.parse(responseData: data)
                 switch parseResponse {
                 case .success(let report):
                     completion(WeatherService.Result.success(report))
