@@ -3,7 +3,7 @@ import UIKit
 struct LaunchMenu: Menu {
     
     var sections: [MenuSection] {
-        return [currentLocation, scenarios, submitFeedback]
+        return [currentLocation, scenarios]
     }
     
     fileprivate var currentLocation: MenuSection {
@@ -95,17 +95,18 @@ struct LaunchMenu: Menu {
         return MenuSection(title: sectionTitle, items: items)
     }
     
-    fileprivate var submitFeedback: MenuSection {
-        let item1Title = NSLocalizedString("LAUNCH_MENU.SEND_FEEDBACK.TITLE", comment: "Send Feedback as a menu choice")
-        let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
-            
-            if let navigationController = navigationController {
-                let vc = UIStoryboard.feedbackViewController()
-                navigationController.show(vc, sender: self)
-            }
-            
-        })
-        return MenuSection(title: nil, items: [item1])
-    }
+    // Removing feedback form for this release
+//    fileprivate var submitFeedback: MenuSection {
+//        let item1Title = NSLocalizedString("LAUNCH_MENU.SEND_FEEDBACK.TITLE", comment: "Send Feedback as a menu choice")
+//        let item1 = MenuItem(title: item1Title, details: nil, runAction: { (navigationController) in
+//            
+//            if let navigationController = navigationController {
+//                let vc = UIStoryboard.feedbackViewController()
+//                navigationController.show(vc, sender: self)
+//            }
+//            
+//        })
+//        return MenuSection(title: nil, items: [item1])
+//    }
 
 }
