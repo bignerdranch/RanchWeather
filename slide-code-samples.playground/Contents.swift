@@ -28,3 +28,16 @@ class LocationViewController: UIViewController {
     }
     
 }
+
+extension UITableView {
+    
+    func dequeue<V: UITableViewCell>(cellOfType type: V.Type,
+                 indexPath: IndexPath, reuseIdentifier: String? = nil) -> V {
+        let identifier = reuseIdentifier ?? String(describing: type)
+        guard let cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? V else {
+            preconditionFailure("Could not dequeue expect cell, cell type")
+        }
+        return cell
+    }
+    
+}
