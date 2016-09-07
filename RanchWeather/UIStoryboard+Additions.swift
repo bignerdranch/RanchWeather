@@ -2,10 +2,10 @@ import UIKit
 
 extension UIStoryboard {
     private enum File: String {
-        case main
-        case weatherDisplay
-        case feedback
-        case debugMenu
+        case main = "Main"
+        case weatherDisplay = "WeatherDisplay"
+        case feedback = "Feedback"
+        case debugMenu = "DebugMenu"
     }
     
     private convenience init(_ file: File) {
