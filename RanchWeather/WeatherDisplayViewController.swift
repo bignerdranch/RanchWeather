@@ -47,8 +47,8 @@ class WeatherDisplayViewController: UIViewController {
         switch error {
         case .invalidLatitude:
             print("invalidLatitude")
-        case .invalidLongittude:
-            print("invalidLongittude")
+        case .invalidLongitude:
+            print("invalidLongitude")
         case .parseError:
             print("parseError")
         case .noPreparedResponse:

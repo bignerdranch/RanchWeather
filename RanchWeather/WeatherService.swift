@@ -13,7 +13,7 @@ struct WeatherService {
     
     enum Error {
         case invalidLatitude
-        case invalidLongittude
+        case invalidLongitude
         case parseError
         case noPreparedResponse
         case networkError(NSError)
