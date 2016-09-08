@@ -14,6 +14,7 @@ This is an app that was developed to demo various code patterns presented in a t
 * Build out the Forms system. (might be dropped)
 * Add animation of detail box.
 * Add testing.
+* Theme should be choosen based on clock.
 
 ## Contact Info
 
