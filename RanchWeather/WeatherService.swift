@@ -27,7 +27,7 @@ struct WeatherService {
     }
     
     func fetchWeatherReport(latitude: Double, longitude: Double, completion: @escaping (_ result: WeatherService.Result) -> Void) {
-        self.dataSource.fetchWeatherReport(latitude: latitude, longitude: longitude, completion: completion)
+        dataSource.fetchWeatherReport(latitude: latitude, longitude: longitude, completion: completion)
     }
     
 }
