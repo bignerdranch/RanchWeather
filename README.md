@@ -8,13 +8,18 @@ This is an app that was developed to demo various code patterns presented in a t
 
 ## TODO
 
-* Make slide visuals to express MultipleDataSources
-* Record demo, post for feedback.
-* Do localization
-* Build out the Forms system. (might be dropped)
-* Add animation of detail box.
-* Add testing.
-* Theme should be choosen based on clock.
+While the app is in a good state to support the talk, there are more things I'd like to do. If I end up using this app to support a blog post or two I may address the following TODO list.
+
+* Theme should be chosen based on clock.
+* Build real location lookup code.
+* Do localization in a second language.
+    * Should support Celsius.
+* Build out the Forms system.
+* Add interruptible animations of detail box.
+* Add unit testing.
+* Add UI testing.
+
+Also see: <https://github.com/bignerdranch/RanchWeather/issues>
 
 ## Contact Info
 
