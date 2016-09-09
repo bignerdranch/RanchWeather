@@ -5,12 +5,9 @@ struct FixedWeatherSource: WeatherServiceDataSource {
     var report: WeatherReport?
     var error: WeatherService.Error?
     
-    // The delay in seconds for when a response will be provided
-    var delayTime = 1.0
-    
     func fetchWeatherReport(latitude: Double, longitude: Double, completion: ((WeatherService.Result) -> Void)) {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
+        DispatchQueue.main.async {
             
             // honor the prepared error if present
             if let error = self.error {
