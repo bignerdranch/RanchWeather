@@ -2,11 +2,11 @@ import Foundation
 
 extension UserDefaults {
     
-    struct Key {
+    enum Key {
         static let themeIdentifier = "com.ranchweather.userdefaults.theme"
     }
     
-    struct Notifications {
+    enum Notifications {
         static let themeDidChange = Notification.Name("com.ranchweather.notification.themeDidChange")
     }
     
