@@ -5,7 +5,7 @@ struct FixedWeatherSource: WeatherServiceDataSource {
     var report: WeatherReport?
     var error: WeatherService.Error?
     
-    func fetchWeatherReport(latitude: Double, longitude: Double, completion: ((WeatherService.Result) -> Void)) {
+    func fetchWeatherReport(latitude: Double, longitude: Double, completion: @escaping ((WeatherService.Result) -> Void)) {
         
         DispatchQueue.main.async {
             

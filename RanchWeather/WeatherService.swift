@@ -1,7 +1,7 @@
 import Foundation
 
 protocol WeatherServiceDataSource {
-    func fetchWeatherReport(latitude: Double, longitude: Double, completion: ((WeatherService.Result) -> Void))
+    func fetchWeatherReport(latitude: Double, longitude: Double, completion: @escaping ((WeatherService.Result) -> Void))
 }
 
 struct WeatherService {
