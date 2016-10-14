@@ -26,3 +26,5 @@ Also see: <https://github.com/bignerdranch/RanchWeather/issues>
 Mike Zornek  
 <zorn@bignredranch.com>  
 [@zorn](http://twitter.com/zorn)
+
+Change October 13, 2016
