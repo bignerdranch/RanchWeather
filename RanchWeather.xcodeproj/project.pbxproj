@@ -171,12 +171,12 @@
 			name = Shared;
 			sourceTree = "<group>";
 		};
-		1ABFBA971D74E9A4004AD49A /* Localtion Service */ = {
+		1ABFBA971D74E9A4004AD49A /* Location Service */ = {
 			isa = PBXGroup;
 			children = (
 				1ABFBA981D74E9B4004AD49A /* LocationService.swift */,
 			);
-			name = "Localtion Service";
+			name = "Location Service";
 			sourceTree = "<group>";
 		};
 		1AE1B7F11D752F7C00681068 /* Themer */ = {
@@ -217,7 +217,7 @@
 				1AA8C8201D750C660010088D /* Debug Menu */,
 				1AA8C8191D74F5730010088D /* Feedback */,
 				1ABFBA941D747C96004AD49A /* Shared */,
-				1ABFBA971D74E9A4004AD49A /* Localtion Service */,
+				1ABFBA971D74E9A4004AD49A /* Location Service */,
 				1ABFBA8C1D73C6AE004AD49A /* Weather Service */,
 				1AEF35EA1D6FBB0100B89078 /* Menu */,
 				1AEF35E01D6FB95B00B89078 /* Main Menu */,
@@ -302,7 +302,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Big Nerd Ranch";
 				TargetAttributes = {
 					1AEF35BC1D6FB31200B89078 = {
@@ -462,6 +462,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -511,6 +512,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
